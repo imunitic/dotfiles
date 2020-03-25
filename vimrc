@@ -59,6 +59,7 @@ filetype plugin indent on    " required
 nmap <silent> nt :NERDTreeToggle<cr>
 nmap <silent> bl :Buffers<cr>
 nmap <silent> fl :Files<cr>
+nmap <silent> cl :CocList<cr>
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
