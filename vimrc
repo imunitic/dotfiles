@@ -51,6 +51,8 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'lnl7/vim-nix'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'fatih/vim-go'
+Plugin 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
