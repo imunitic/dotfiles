@@ -53,12 +53,14 @@ Plugin 'lnl7/vim-nix'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'fatih/vim-go'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-nmap <silent> nt :NERDTreeToggle<cr>
+nmap <silent> <F12> :NERDTreeToggle<cr>
+nmap <silent> <F8> :TagbarToggle<cr>
 nmap <silent> bl :Buffers<cr>
 nmap <silent> fl :Files<cr>
 nmap <silent> cl :CocList<cr>
@@ -67,6 +69,13 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+autocmd FileType go nmap <leader>d <Plug>(go-doc)
+
+let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
+let g:go_doc_popup_window = 1
+set timeoutlen=10000 ttimeoutlen=0
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
