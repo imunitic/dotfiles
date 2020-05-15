@@ -54,6 +54,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'fatih/vim-go'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'majutsushi/tagbar'
+Plugin 'romgrk/winteract.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -69,8 +70,9 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gw :InteractiveWindow<cr>
 
-autocmd FileType go nmap <leader>d <Plug>(go-doc)
+autocm FileType go nmap <leader>d <Plug>(go-doc)
 
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
