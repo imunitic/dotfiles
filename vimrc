@@ -55,10 +55,17 @@ Plugin 'fatih/vim-go'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'majutsushi/tagbar'
 Plugin 'romgrk/winteract.vim'
+Plugin 'pseewald/vim-anyfold'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'tpope/vim-unimpaired'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Activate anyfold for all filetypes
+set foldlevel=99
+autocmd FileType * AnyFoldActivate
 
 nmap <silent> <F12> :NERDTreeToggle<cr>
 nmap <silent> <F8> :TagbarToggle<cr>
