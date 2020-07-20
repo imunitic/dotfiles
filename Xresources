@@ -4,7 +4,7 @@ Xcursor.size: 16
 
 ! special
 *.foreground:   #d1c8bb
-*.background:   #110f0e
+*.background:   [90]#110f0e
 *.cursorColor:  #d1c8bb
 
 ! black
