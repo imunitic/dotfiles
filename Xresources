@@ -3,48 +3,49 @@ Xcursor.size: 16
 !! Colorscheme
 
 ! special
-*.foreground:   #d1c8bb
-*.background:   [90]#110f0e
-*.cursorColor:  #d1c8bb
+*.foreground:   #8a8986
+*.background:   #28211c
+*.cursorColor:  #8a8986
 
 ! black
-*.color0:       #1b1917
-*.color8:       #81b377
+*.color0:       #28211c
+*.color8:       #666666
 
 ! red
-*.color1:       #24221f
-*.color9:       #74a8db
+*.color1:       #cf6a4c
+*.color9:       #cf6a4c
 
 ! green
-*.color2:       #36332f
-*.color10:      #d292d9
+*.color2:       #54be0d
+*.color10:      #54be0d
 
 ! yellow
-*.color3:       #4e4a45
-*.color11:      #567da3
+*.color3:       #f9ee98
+*.color11:      #f9ee98
 
 ! blue
-*.color4:       #6c6860
-*.color12:      #887859
+*.color4:       #5ea6ea
+*.color12:      #5ea6ea
 
 ! magenta
-*.color5:       #908a81
-*.color13:      #ad9972
+*.color5:       #9b859d
+*.color13:      #9b859d
 
 ! cyan
-*.color6:       #bbb3a7
-*.color14:      #87afda
+*.color6:       #afc4db
+*.color14:      #afc4db
 
 ! white
-*.color7:       #e7e2db
-*.color15:      #d08792
+*.color7:       #8a8986
+*.color15:      #baae9e
 
 !! Common Keybinds for Navigations
 URxvt.keysym.Shift-PgUp: command:\033]720;1\007
 URxvt.keysym.Shift-PgDown: command:\033]721;1\007
 
 !! Copy Paste & Other Extensions
-URxvt.perl-ext-common: default,matcher,clipboard,tabbed
+URxvt.perl-lib: /home/ivica/.local/urxvt-perl
+URxvt.perl-ext-common: default,unichr,matcher,clipboard,tabbed,font-size
 URxvt.copyCommand: xclip -i -selection clipboard
 URxvt.pasteCommand: xclip -o -selection clipboard
 URxvt.keysym.M-c: perl:clipboard:copy
@@ -52,14 +53,17 @@ URxvt.keysym.M-v: perl:clipboard:paste
 URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 URxvt.keysym.C-Delete: perl:matcher:last
 URxvt.keysym.M-Delete: perl:matcher:list
+URxvt.keysym.C-Up: font-size:increase
+URxvt.keysym.C-Down: font-size:decrease
+URxvt.keysym.C-equal: font-size:reset
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 URxvt.underlineURLs: true
 URxvt.urlButton: 1
 
 URxvt.termName:         rxvt-256color
-URxvt.font:             xft:GoMono Nerd Font Mono:style=Book:size=10
-
+!URxvt.font:             xft:Hack Nerd Font Mono:style=Regular:size=10
+URxvt.font:             xft:Hurmit Nerd Font Mono:style=medium:size=10
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
