@@ -58,6 +58,7 @@ Plugin 'romgrk/winteract.vim'
 Plugin 'pseewald/vim-anyfold'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'terryma/vim-multiple-cursors'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
