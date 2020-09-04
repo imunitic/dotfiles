@@ -56,9 +56,10 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'majutsushi/tagbar'
 Plugin 'romgrk/winteract.vim'
 Plugin 'pseewald/vim-anyfold'
-Plugin 'wakatime/vim-wakatime'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'vimwiki/vimwiki'
+Plugin 'mtth/scratch.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -86,6 +87,9 @@ let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
 let g:go_doc_popup_window = 1
 set timeoutlen=10000 ttimeoutlen=0
+
+let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'syntax': 'default'},
+            \ {'path': '~/Development/research/grpc/SW-550'}]
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
