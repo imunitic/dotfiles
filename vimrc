@@ -88,8 +88,7 @@ let g:go_auto_type_info = 1
 let g:go_doc_popup_window = 1
 set timeoutlen=10000 ttimeoutlen=0
 
-let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'syntax': 'default'},
-            \ {'path': '~/Development/research/grpc/SW-550'}]
+let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'syntax': 'default'}]
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
