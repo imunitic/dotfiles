@@ -174,7 +174,7 @@ exec --no-startup-id picom
 
 bindsym $mod+l exec "i3lock -c 112055"
 bindsym $mod+z exec "shutdown -h now"
-bindsym $mod+Shift+z "shutdown -r now"
+bindsym $mod+Shift+z exec "shutdown -r now"
 bindsym $mod+c exec "CM_ONESHOT=1 clipmenud"
 bindsym $mod+Shift+v exec clipmenu
 bindsym --release $mod+p exec "scrot -s /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"

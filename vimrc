@@ -90,6 +90,10 @@ set timeoutlen=10000 ttimeoutlen=0
 
 let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'syntax': 'default'}]
 
+" ctrlp 
+let g:ctrlp_show_hidden = 1
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.go/*,*/venv/*
+
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
