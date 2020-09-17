@@ -69,11 +69,12 @@ filetype plugin indent on    " required
 set foldlevel=99
 autocmd FileType * AnyFoldActivate
 
-nmap <silent> <F12> :NERDTreeToggle<cr>
-nmap <silent> <F8> :TagbarToggle<cr>
-nmap <silent> bl :Buffers<cr>
-nmap <silent> fl :Files<cr>
-nmap <silent> cl :CocList<cr>
+nmap <silent> <leader>nt :NERDTreeToggle<cr>
+nmap <silent> <leader>tt :TagbarToggle<cr>
+nmap <silent> <leader>bl :Buffers!<cr>
+nmap <silent> <leader>fl :Files!<cr>
+nmap <silent> <leader>cl :CocList<cr>
+nmap <leader>ag :Ag! 
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
