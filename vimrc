@@ -48,7 +48,6 @@ Plugin 'neoclide/coc.nvim'
 Plugin 'morhetz/gruvbox'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'rust-lang/rust.vim'
-Plugin 'kien/ctrlp.vim'
 Plugin 'lnl7/vim-nix'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'fatih/vim-go'
@@ -60,6 +59,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vimwiki/vimwiki'
 Plugin 'mtth/scratch.vim'
+Plugin 'cespare/vim-toml'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -68,19 +68,6 @@ filetype plugin indent on    " required
 " Activate anyfold for all filetypes
 set foldlevel=99
 autocmd FileType * AnyFoldActivate
-
-nmap <silent> <leader>nt :NERDTreeToggle<cr>
-nmap <silent> <leader>tt :TagbarToggle<cr>
-nmap <silent> <leader>bl :Buffers!<cr>
-nmap <silent> <leader>fl :Files!<cr>
-nmap <silent> <leader>cl :CocList<cr>
-nmap <leader>ag :Ag! 
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gw :InteractiveWindow<cr>
 
 autocm FileType go nmap <leader>d <Plug>(go-doc)
 
@@ -91,9 +78,7 @@ set timeoutlen=10000 ttimeoutlen=0
 
 let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'syntax': 'default'}]
 
-" ctrlp 
-let g:ctrlp_show_hidden = 1
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.go/*,*/venv/*
+let $FZF_DEFAULT_COMMAND='ag --hidden --ignore ".go/*" --ignore ".git/*" --ignore ".venv/*" --ignore "venv/*" -U -l -g ""'
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -170,6 +155,8 @@ if has("win16") || has("win32")
 else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
+
+
 
 "Always show current position
 set ruler
@@ -418,6 +405,24 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
+
+nmap <leader>nt :NERDTreeToggle<cr>
+nmap <leader>tt :TagbarToggle<cr>
+nmap <leader>bl :Buffers!<cr>
+nmap <leader>fl :Files!<cr>
+nmap <leader>ml :Maps!<cr>
+nmap <leader>cx :Commits!<cr>
+nmap <leader>cl :CocList<cr>
+nmap <leader>gg :G<cr>
+nmap <leader>ag :Ag! 
+nmap <leader>ff :Format<cr>
+
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gr <Plug>(coc-references)
+nmap <leader>gw :InteractiveWindow<cr>
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
