@@ -38,7 +38,7 @@
         pkgs.prototool
         pkgs.protobuf
         pkgs.go-protobuf
-        pkgs.python38Packages.virtualenv
+        pkgs.python39Packages.virtualenv
         pkgs.prototool
         pkgs.stack
         pkgs.lf
