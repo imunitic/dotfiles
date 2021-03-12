@@ -1,4 +1,3 @@
-eval "$(starship init zsh)"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -32,3 +31,7 @@ alias ls="ls -G"
 bindkey "ç" fzf-cd-widget
 
 export PATH=$PATH:~/.local/bin
+export NIXPKGS_ALLOW_UNFREE=1
+export NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1
+
+eval "$(starship init zsh)"

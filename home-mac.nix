@@ -11,12 +11,6 @@
     userEmail = "ivica.munitic@kiwi.com";
   };
 
-  home.file = {
-    ".vimrc".source = "~/Development/personal/dotfiles/vimrc";
-    ".config/alacritty/alacritty.yml".source = "~/Development/personal/dotfiles/alacritty.yml";
-    ".config/nvim/init.vim".source = "~/Development/personal/dotfiles/vimrc";
-  };
-
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "herrflick";
@@ -47,7 +41,6 @@
         pkgs.protobuf
         pkgs.python3
         pkgs.pipenv
-        pkgs.python-language-server
         pkgs.prototool
         pkgs.ghc
         pkgs.cabal-install
@@ -65,17 +58,12 @@
         pkgs.k9s
         pkgs.git
         pkgs.google-cloud-sdk
+        pkgs.zinit
 
         # Programs
-        pkgs.alacritty
         pkgs.tmux
         pkgs.starship
         pkgs.neovim
-        pkgs.slack
-        pkgs.brave
-        pkgs.discord
-        pkgs.sublime
-        pkgs.sublime-merge
 
         # Fonts
         pkgs.nerdfonts
