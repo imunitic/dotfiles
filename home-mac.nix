@@ -5,6 +5,18 @@
   programs.home-manager.enable = true;
   programs.man.enable = false;
 
+  programs.git = {
+    enable = true;
+    userName = "Ivica Munitic";
+    userEmail = "ivica.munitic@kiwi.com";
+  };
+
+  home.file = {
+    ".vimrc".source = "~/Development/personal/dotfiles/vimrc";
+    ".config/alacritty/alacritty.yml".source = "~/Development/personal/dotfiles/alacritty.yml";
+    ".config/nvim/init.vim".source = "~/Development/personal/dotfiles/vimrc";
+  };
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "herrflick";
@@ -21,30 +33,54 @@
   home.stateVersion = "21.05";
 
   home.packages = [
+        # Development
         pkgs.rlwrap
         pkgs.rustup
         pkgs.rust-analyzer
-        pkgs.nox
-        pkgs.niv
-        pkgs.lorri
         pkgs.universal-ctags
         pkgs.direnv
+        pkgs.go
         pkgs.go-langserver
-        pkgs.entr
-        pkgs.fd
-        pkgs.ag
-        pkgs.mage
+        pkgs.go-protobuf
         pkgs.grpcurl
         pkgs.prototool
         pkgs.protobuf
-        pkgs.go-protobuf
-        pkgs.python39Packages.virtualenv
+        pkgs.python3
+        pkgs.pipenv
+        pkgs.python-language-server
         pkgs.prototool
+        pkgs.ghc
+        pkgs.cabal-install
         pkgs.stack
+        pkgs.haskell-language-server
+        pkgs.nodejs
+ 
+        # Utils
+        pkgs.fzf
+        pkgs.entr
+        pkgs.fd
+        pkgs.ag
+        pkgs.bat
         pkgs.lf
         pkgs.k9s
-        pkgs.nodejs
         pkgs.git
         pkgs.google-cloud-sdk
+
+        # Programs
+        pkgs.alacritty
+        pkgs.tmux
+        pkgs.starship
+        pkgs.neovim
+        pkgs.slack
+        pkgs.brave
+        pkgs.discord
+        pkgs.sublime
+        pkgs.sublime-merge
+
+        # Fonts
+        pkgs.nerdfonts
+
+        # Vim plugins
+        pkgs.vimPlugins.Vundle-vim
   ];
 }
