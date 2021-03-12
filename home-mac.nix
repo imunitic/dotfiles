@@ -23,6 +23,7 @@
   home.packages = [
         pkgs.rlwrap
         pkgs.rustup
+        pkgs.rust-analyzer
         pkgs.nox
         pkgs.niv
         pkgs.lorri
@@ -39,5 +40,11 @@
         pkgs.go-protobuf
         pkgs.python38Packages.virtualenv
         pkgs.prototool
+        pkgs.stack
+        pkgs.lf
+        pkgs.k9s
+        pkgs.nodejs
+        pkgs.git
+        pkgs.google-cloud-sdk
   ];
 }
