@@ -22,7 +22,7 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 #
-source /Users/herrflick/.nix-profile/etc/profile.d/nix.sh
+source "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
 alias ls="ls -G"
 

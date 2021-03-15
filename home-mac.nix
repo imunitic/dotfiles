@@ -26,6 +26,11 @@
   # changes in each release.
   home.stateVersion = "21.05";
 
+  home.file.".zshrc".source = "/Users/herrflick/Development/personal/dotfiles/zshrc";
+  home.file.".vimrc".source = "/Users/herrflick/Development/personal/dotfiles/vimrc";
+  home.file.".config/nvim/init.vim".source = "/Users/herrflick/Development/personal/dotfiles/vimrc";
+  home.file.".config/alacritty/alacritty.yml".source = "/Users/herrflick/Development/personal/dotfiles/alacritty.yml";
+
   home.packages = [
         # Development
         pkgs.rlwrap
