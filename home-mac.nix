@@ -34,7 +34,7 @@
         pkgs.universal-ctags
         pkgs.direnv
         pkgs.go
-        pkgs.go-langserver
+        pkgs.gopls
         pkgs.go-protobuf
         pkgs.grpcurl
         pkgs.prototool
