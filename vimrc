@@ -59,6 +59,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vimwiki/vimwiki'
 Plugin 'mtth/scratch.vim'
 Plugin 'cespare/vim-toml'
+Plugin 'jparise/vim-graphql'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -68,14 +69,15 @@ filetype plugin indent on    " required
 set foldlevel=99
 autocmd FileType * AnyFoldActivate
 
-autocm FileType go nmap <leader>d <Plug>(go-doc)
+autocmd FileType go nmap <leader>d <Plug>(go-doc)
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
 let g:go_doc_popup_window = 1
 set timeoutlen=10000 ttimeoutlen=0
 
-let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'syntax': 'default'}]
+let g:vimwiki_list = [{'path': '~/Development/documents/vimwiki', 'syntax': 'default'}]
 
 let $FZF_DEFAULT_COMMAND='ag --hidden --ignore ".go/*" --ignore ".git/*" --ignore ".venv/*" --ignore "venv/*" -U -l -g ""'
 
