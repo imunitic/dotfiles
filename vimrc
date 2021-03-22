@@ -87,7 +87,6 @@ let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comm
 command! Term :bot sp | term
 autocmd TermOpen term://* startinsert
 tnoremap <expr> <Esc> &ft == 'fzf' ? '<Esc>' : '<C-\><C-n>'
-nmap <leader>tb :Term<cr>
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -421,7 +420,6 @@ nmap <leader>bl :Buffers<cr>
 nmap <leader>fl :Files<cr>
 nmap <leader>gl :GFiles?<cr>
 nmap <leader>ml :Maps<cr>
-nmap <leader>cx :Commits<cr>
 nmap <leader>cl :CocList<cr>
 nmap <leader>gg :G<cr>
 nmap <leader>gc :Commits<cr>
