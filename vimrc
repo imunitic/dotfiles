@@ -79,6 +79,7 @@ set timeoutlen=10000 ttimeoutlen=0
 
 let g:vimwiki_list = [{'path': '~/Development/documents/vimwiki', 'syntax': 'default'}]
 
+let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g ""'
 let g:fzf_preview_window = []
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
 
