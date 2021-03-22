@@ -80,6 +80,10 @@ set timeoutlen=10000 ttimeoutlen=0
 let g:vimwiki_list = [{'path': '~/Development/documents/vimwiki', 'syntax': 'default'}]
 
 let $FZF_DEFAULT_COMMAND='ag --hidden --ignore ".go/*" --ignore ".git/*" --ignore ".venv/*" --ignore "venv/*" -U -l -g ""'
+let g:fzf_preview_window = []
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
+
+tnoremap <expr> <Esc> &ft == 'fzf' ? '<Esc>' : '<C-\><C-n>'
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -408,14 +412,17 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 map <leader>pp :setlocal paste!<cr>
 
 nmap <leader>nt :NERDTreeToggle<cr>
-nmap <leader>tt :TagbarToggle<cr>
-nmap <leader>bl :Buffers!<cr>
-nmap <leader>fl :Files!<cr>
-nmap <leader>ml :Maps!<cr>
-nmap <leader>cx :Commits!<cr>
+nmap <leader>tl :Tags<cr>
+nmap <leader>bl :Buffers<cr>
+nmap <leader>fl :Files<cr>
+nmap <leader>gl :GFiles?<cr>
+nmap <leader>ml :Maps<cr>
+nmap <leader>cx :Commits<cr>
 nmap <leader>cl :CocList<cr>
 nmap <leader>gg :G<cr>
-nmap <leader>ag :Ag! 
+nmap <leader>gc :Commits<cr>
+nmap <leader>gb :BCommits<cr>
+nmap <leader>ag :Ag 
 nmap <leader>ff :Format<cr>
 
 nmap <leader>gd <Plug>(coc-definition)
