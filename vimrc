@@ -83,7 +83,11 @@ let $FZF_DEFAULT_COMMAND='ag --hidden --ignore ".go/*" --ignore ".git/*" --ignor
 let g:fzf_preview_window = []
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
 
+" Terminal
+command! Term :bot sp | term
+autocmd TermOpen term://* startinsert
 tnoremap <expr> <Esc> &ft == 'fzf' ? '<Esc>' : '<C-\><C-n>'
+nmap <leader>tb :Term<cr>
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
