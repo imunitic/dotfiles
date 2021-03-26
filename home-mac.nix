@@ -58,6 +58,7 @@
         pkgs.entr
         pkgs.fd
         pkgs.ag
+        pkgs.ripgrep
         pkgs.bat
         pkgs.lf
         pkgs.k9s

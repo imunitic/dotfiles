@@ -1,8 +1,11 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
-"       Amir Salihefendic — @amix3k
+" Maintainer:
+"       Ivica Munitic
 "
-" Awesome_version:
+" This is a customized version of the amix3k config
+"
+" Original version:
+"       Author: Amir Salihefendic — @amix3k
 "       Get this config, nice color schemes and lots of plugins!
 "
 "       Install the awesome version from:
@@ -51,7 +54,6 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'lnl7/vim-nix'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'majutsushi/tagbar'
 Plugin 'romgrk/winteract.vim'
 Plugin 'pseewald/vim-anyfold'
 Plugin 'tpope/vim-unimpaired'
@@ -60,6 +62,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'mtth/scratch.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'jparise/vim-graphql'
+Plugin 'jremmen/vim-ripgrep'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -79,7 +82,8 @@ set timeoutlen=10000 ttimeoutlen=0
 
 let g:vimwiki_list = [{'path': '~/Development/documents/vimwiki', 'syntax': 'default'}]
 
-let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g ""'
+"let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g ""'
+let $FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 let g:fzf_preview_window = []
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
 
@@ -416,7 +420,8 @@ map <leader>pp :setlocal paste!<cr>
 
 nmap <leader>nt :NERDTreeToggle<cr>
 nmap <leader>tl :Tags<cr>
-nmap <leader>bl :Buffers<cr>
+nmap <leader>bb :Buffers<cr>
+nmap <leader>bl :BLines<cr>
 nmap <leader>fl :Files<cr>
 nmap <leader>gl :GFiles?<cr>
 nmap <leader>ml :Maps<cr>
@@ -424,7 +429,7 @@ nmap <leader>cl :CocList<cr>
 nmap <leader>gg :G<cr>
 nmap <leader>gc :Commits<cr>
 nmap <leader>gb :BCommits<cr>
-nmap <leader>ag :Ag 
+nmap <leader>rg :Rg
 nmap <leader>ff :Format<cr>
 
 nmap <leader>gd <Plug>(coc-definition)
