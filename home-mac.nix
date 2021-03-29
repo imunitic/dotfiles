@@ -53,6 +53,9 @@
         pkgs.haskell-language-server
         pkgs.nodejs
         pkgs.niv
+        pkgs.gdc
+        pkgs.dmd
+        pkgs.dub
  
         # Utils
         pkgs.fzf
