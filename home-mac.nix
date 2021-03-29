@@ -52,6 +52,7 @@
         pkgs.stack
         pkgs.haskell-language-server
         pkgs.nodejs
+        pkgs.niv
  
         # Utils
         pkgs.fzf
