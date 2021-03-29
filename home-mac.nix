@@ -52,6 +52,7 @@
         pkgs.stack
         pkgs.haskell-language-server
         pkgs.nodejs
+        pkgs.yarn
         pkgs.niv
         pkgs.gdc
         pkgs.dub
