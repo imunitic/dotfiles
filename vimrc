@@ -62,7 +62,6 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'mtth/scratch.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'jparise/vim-graphql'
-Plugin 'jremmen/vim-ripgrep'
 Plugin 'luochen1990/rainbow'
 Plugin 'maxmellon/vim-jsx-pretty'
 
@@ -89,7 +88,7 @@ let $FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 let g:fzf_preview_window = []
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
 
-command! -bang -nargs=* Ripgrep
+command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
@@ -448,7 +447,7 @@ nmap <leader>gi <Plug>(coc-implementation)
 nmap <leader>gr <Plug>(coc-references)
 nmap <leader>gw :InteractiveWindow<cr>
 
-nmap <leader>rr :Ripgrep<cr>
+nmap <leader>rr :Rg<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
