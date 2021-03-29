@@ -64,8 +64,7 @@ Plugin 'cespare/vim-toml'
 Plugin 'jparise/vim-graphql'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'luochen1990/rainbow'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plugin 'maxmellon/vim-jsx-pretty'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -432,7 +431,7 @@ nmap <leader>cl :CocList<cr>
 nmap <leader>gg :G<cr>
 nmap <leader>gc :Commits<cr>
 nmap <leader>gb :BCommits<cr>
-nmap <leader>rg :Rg
+nmap <leader>rg :Rg 
 nmap <leader>ff :Format<cr>
 
 nmap <leader>gd <Plug>(coc-definition)
