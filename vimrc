@@ -63,6 +63,7 @@ Plugin 'mtth/scratch.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'jparise/vim-graphql'
 Plugin 'jremmen/vim-ripgrep'
+Plugin 'luochen1990/rainbow'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
