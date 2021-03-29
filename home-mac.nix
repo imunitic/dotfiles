@@ -54,7 +54,6 @@
         pkgs.nodejs
         pkgs.niv
         pkgs.gdc
-        pkgs.dmd
         pkgs.dub
  
         # Utils
