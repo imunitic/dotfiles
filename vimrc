@@ -431,7 +431,6 @@ nmap <leader>cl :CocList<cr>
 nmap <leader>gg :G<cr>
 nmap <leader>gc :Commits<cr>
 nmap <leader>gb :BCommits<cr>
-nmap <leader>rg :Rg 
 nmap <leader>ff :Format<cr>
 
 nmap <leader>gd <Plug>(coc-definition)
@@ -440,7 +439,13 @@ nmap <leader>gi <Plug>(coc-implementation)
 nmap <leader>gr <Plug>(coc-references)
 nmap <leader>gw :InteractiveWindow<cr>
 
-
+command! -bang -nargs=* Rg
+      \ call fzf#vim#grep(
+      \   'rg --column --line-number --no-heading --color=always --ignore-case '.shellescape(<q-args>), 1,
+      \   <bang>0 ? fzf#vim#with_preview('up:60%')
+      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \   <bang>0)
+nmap <leader>rr :Rg<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions

@@ -69,6 +69,7 @@
         pkgs.git
         pkgs.google-cloud-sdk
         pkgs.zinit
+        pkgs.watch
 
         # Programs
         pkgs.tmux
