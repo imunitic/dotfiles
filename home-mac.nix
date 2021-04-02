@@ -54,7 +54,9 @@
         pkgs.nodejs
         pkgs.yarn
         pkgs.niv
-        pkgs.gdc
+        pkgs.ldc
+        pkgs.rdmd
+        pkgs.dtools
         pkgs.dub
  
         # Utils
