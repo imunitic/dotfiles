@@ -25,6 +25,7 @@ zinit light-mode for \
 source "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
 alias ls="ls -G"
+alias gst="nvim -c 'G | wincmd j | hide'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
