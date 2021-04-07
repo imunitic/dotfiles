@@ -33,6 +33,7 @@ bindkey "ç" fzf-cd-widget
 
 export PATH=$PATH:~/.local/bin
 export NIXPKGS_ALLOW_UNFREE=1
+export NIXPKGS_ALLOW_BROKEN=1
 export NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 export FZF_DEFAULT_OPTS="--extended --cycle -e"

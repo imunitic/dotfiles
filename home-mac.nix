@@ -58,6 +58,10 @@
         pkgs.rdmd
         pkgs.dtools
         pkgs.dub
+        pkgs.llvmPackages_11.lld
+        pkgs.llvmPackages_11.llvm
+        pkgs.llvmPackages_11.clang
+        pkgs.llvmPackages_11.libclang
  
         # Utils
         pkgs.fzf
@@ -72,6 +76,7 @@
         pkgs.google-cloud-sdk
         pkgs.zinit
         pkgs.watch
+        pkgs.nix-tree
 
         # Programs
         pkgs.tmux
