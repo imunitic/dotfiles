@@ -62,6 +62,7 @@
         pkgs.llvmPackages_11.llvm
         pkgs.llvmPackages_11.clang
         pkgs.llvmPackages_11.libclang
+        pkgs.libiconv
  
         # Utils
         pkgs.fzf
