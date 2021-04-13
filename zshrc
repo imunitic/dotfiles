@@ -20,6 +20,8 @@ zinit light-mode for \
     zinit-zsh/z-a-patch-dl \
     zinit-zsh/z-a-bin-gem-node
 
+zinit load agkozak/zsh-z
+
 ### End of Zinit's installer chunk
 #
 source "$HOME/.nix-profile/etc/profile.d/nix.sh"

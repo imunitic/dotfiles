@@ -58,10 +58,6 @@
         pkgs.rdmd
         pkgs.dtools
         pkgs.dub
-        pkgs.llvmPackages_11.lld
-        pkgs.llvmPackages_11.llvm
-        pkgs.llvmPackages_11.clang
-        pkgs.llvmPackages_11.libclang
         pkgs.libiconv
         pkgs.cmake
  
