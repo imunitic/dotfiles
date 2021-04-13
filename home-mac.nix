@@ -63,6 +63,7 @@
         pkgs.llvmPackages_11.clang
         pkgs.llvmPackages_11.libclang
         pkgs.libiconv
+        pkgs.cmake
  
         # Utils
         pkgs.fzf
@@ -78,6 +79,7 @@
         pkgs.zinit
         pkgs.watch
         pkgs.nix-tree
+        pkgs.gitui
 
         # Programs
         pkgs.tmux
