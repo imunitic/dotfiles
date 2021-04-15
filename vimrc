@@ -111,13 +111,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 
