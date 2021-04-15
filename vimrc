@@ -435,14 +435,19 @@ nmap <leader>gg :G<cr>
 nmap <leader>gc :Commits<cr>
 nmap <leader>gb :BCommits<cr>
 nmap <leader>ff :Format<cr>
-
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gy <Plug>(coc-type-definition)
-nmap <leader>gi <Plug>(coc-implementation)
-nmap <leader>gr <Plug>(coc-references)
 nmap <leader>gw :InteractiveWindow<cr>
-
 nmap <leader>rr :Rg<cr>
+nmap <leader>tt :Term<cr>
+
+" Coc maps
+nmap \gd <Plug>(coc-definition)
+nmap \gy <Plug>(coc-type-definition)
+nmap \gi <Plug>(coc-implementation)
+nmap \gr <Plug>(coc-references)
+nmap \ca <Plug>(coc-codeaction-cursor)
+nmap \cc <Plug>(coc-codeaction)
+nmap \cf <Plug>(coc-fix-current)
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
