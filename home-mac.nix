@@ -60,6 +60,7 @@
         pkgs.dub
         pkgs.libiconv
         pkgs.cmake
+        pkgs.elmPackages.elm
  
         # Utils
         pkgs.fzf
@@ -76,6 +77,7 @@
         pkgs.watch
         pkgs.nix-tree
         pkgs.lazygit
+
         # Programs
         pkgs.tmux
         pkgs.starship
