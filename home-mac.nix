@@ -77,6 +77,7 @@
         pkgs.watch
         pkgs.nix-tree
         pkgs.lazygit
+        pkgs.dive
 
         # Programs
         pkgs.tmux

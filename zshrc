@@ -28,6 +28,8 @@ source "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
 alias ls="ls -G"
 alias gst="nvim -c 'G | wincmd j | hide'"
+alias hms="home-manager switch"
+alias hme="home-manager edit"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
