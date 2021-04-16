@@ -75,8 +75,7 @@
         pkgs.zinit
         pkgs.watch
         pkgs.nix-tree
-        pkgs.gitui
-
+        pkgs.lazygit
         # Programs
         pkgs.tmux
         pkgs.starship
