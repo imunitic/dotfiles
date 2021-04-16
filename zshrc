@@ -30,6 +30,7 @@ alias ls="ls -G"
 alias gst="nvim -c 'G | wincmd j | hide'"
 alias hms="home-manager switch"
 alias hme="home-manager edit"
+alias lzg="lazygit"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
