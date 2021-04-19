@@ -78,6 +78,7 @@
         pkgs.nix-tree
         pkgs.lazygit
         pkgs.dive
+        pkgs.glab
 
         # Programs
         pkgs.tmux
