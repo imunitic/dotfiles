@@ -79,6 +79,7 @@
         pkgs.lazygit
         pkgs.dive
         pkgs.glab
+        pkgs.terraform
 
         # Programs
         pkgs.tmux

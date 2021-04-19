@@ -30,6 +30,7 @@ alias ls="ls -G"
 alias h="home-manager"
 alias gst="nvim -c 'G | wincmd j | hide'"
 alias lzg="lazygit"
+alias nixu="nix-channel --update; nix-env -iA nixpkgs.nix"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
