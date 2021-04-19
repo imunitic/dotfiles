@@ -27,9 +27,8 @@ zinit load agkozak/zsh-z
 source "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
 alias ls="ls -G"
+alias h="home-manager"
 alias gst="nvim -c 'G | wincmd j | hide'"
-alias hms="home-manager switch"
-alias hme="home-manager edit"
 alias lzg="lazygit"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
