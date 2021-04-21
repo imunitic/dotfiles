@@ -433,8 +433,8 @@ nmap <leader>rr :Rg<cr>
 nmap <leader>tt :Term<cr>
 
 " vimwiki maps
-nmap wtl <Plug>VimwikiToggleListItem
-vmap wtl <Plug>VimwikiToggleListItem
+nmap \wtl <Plug>VimwikiToggleListItem
+vmap \wtl <Plug>VimwikiToggleListItem
 
 " Coc maps
 nmap \gd <Plug>(coc-definition)
