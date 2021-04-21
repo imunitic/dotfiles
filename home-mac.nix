@@ -80,6 +80,7 @@
         pkgs.dive
         pkgs.glab
         pkgs.terraform
+        pkgs.kubeval
 
         # Programs
         pkgs.tmux
