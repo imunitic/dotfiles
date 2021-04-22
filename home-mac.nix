@@ -54,10 +54,6 @@
         pkgs.nodejs
         pkgs.yarn
         pkgs.niv
-        pkgs.ldc
-        pkgs.rdmd
-        pkgs.dtools
-        pkgs.dub
         pkgs.libiconv
         pkgs.cmake
         pkgs.elmPackages.elm
