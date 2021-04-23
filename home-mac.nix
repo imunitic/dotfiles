@@ -54,6 +54,7 @@
         pkgs.nodejs
         pkgs.yarn
         pkgs.niv
+        pkgs.manix
         pkgs.libiconv
         pkgs.cmake
         pkgs.elmPackages.elm
