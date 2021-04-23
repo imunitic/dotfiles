@@ -38,6 +38,7 @@
         pkgs.rust-analyzer
         pkgs.universal-ctags
         pkgs.direnv
+        pkgs.gdb
         pkgs.go
         pkgs.gopls
         pkgs.go-protobuf
