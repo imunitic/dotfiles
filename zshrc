@@ -36,6 +36,9 @@ alias nixu="nix-channel --update; nix-env -iA nixpkgs.nix"
 
 bindkey "ç" fzf-cd-widget
 
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 export EDITOR=nvim
 export PATH=$PATH:~/.local/bin:~/.cargo/bin
 export NIXPKGS_ALLOW_UNFREE=1
