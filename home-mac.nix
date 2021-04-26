@@ -84,6 +84,7 @@
         pkgs.tmux
         pkgs.starship
         pkgs.neovim
+        pkgs.neofetch
 
         # Fonts
         pkgs.nerdfonts
