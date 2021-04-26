@@ -85,6 +85,7 @@
         pkgs.starship
         pkgs.neovim
         pkgs.neofetch
+        pkgs.htop
 
         # Fonts
         pkgs.nerdfonts
