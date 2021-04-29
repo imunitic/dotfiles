@@ -86,6 +86,7 @@
         pkgs.neovim
         pkgs.neofetch
         pkgs.htop
+        pkgs.graphviz
 
         # Fonts
         pkgs.nerdfonts
