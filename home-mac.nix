@@ -60,6 +60,7 @@
         pkgs.libiconv
         pkgs.cmake
         pkgs.elmPackages.elm
+        pkgs.redis
  
         # Utils
         pkgs.fzf
@@ -80,6 +81,7 @@
         pkgs.glab
         pkgs.terraform
         pkgs.kubeval
+        pkgs.git-filter-repo
 
         # Programs
         pkgs.tmux
@@ -88,6 +90,7 @@
         pkgs.neofetch
         pkgs.htop
         pkgs.graphviz
+        pkgs.mc
 
         # Fonts
         pkgs.nerdfonts
