@@ -37,6 +37,7 @@
         pkgs.rlwrap
         pkgs.rustup
         pkgs.rust-analyzer
+        pkgs.nim
         pkgs.universal-ctags
         pkgs.direnv
         pkgs.gdb
