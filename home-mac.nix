@@ -51,6 +51,7 @@
         pkgs.pipenv
         pkgs.prototool
         pkgs.ghc
+        pkgs.ghcid
         pkgs.cabal-install
         pkgs.stack
         pkgs.haskell-language-server
