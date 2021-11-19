@@ -31,6 +31,7 @@
   home.file.".config/nvim/init.vim".source = "${config.home.homeDirectory}/Development/personal/dotfiles/vimrc";
   home.file.".config/alacritty/alacritty.yml".source = "${config.home.homeDirectory}/Development/personal/dotfiles/alacritty.yml";
   home.file.".config/kitty/kitty.conf".source = "${config.home.homeDirectory}/Development/personal/dotfiles/kitty.conf";
+  home.file.".config/nix/nix.conf".source = "${config.home.homeDirectory}/Development/personal/dotfiles/nix.conf";
 
   home.packages = [
         # Development
