@@ -40,7 +40,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 export EDITOR=nvim
-export PATH=$PATH:~/.local/bin:~/.cargo/bin
+export PATH=$PATH:~/.local/bin:~/.cargo/bin:~/.ghcup/bin
 export NIXPKGS_ALLOW_UNFREE=1
 export NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1
 export LIBRARY_PATH=$LIBRARY_PATH:~/.nix-profile/lib # add nix libraries to the path for clang
