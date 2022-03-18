@@ -64,7 +64,7 @@
         pkgs.fzf
         pkgs.entr
         pkgs.fd
-        pkgs.ag
+        pkgs.silver-searcher
         pkgs.ripgrep
         pkgs.bat
         pkgs.lf
