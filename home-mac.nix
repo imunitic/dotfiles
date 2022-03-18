@@ -89,6 +89,7 @@
         pkgs.htop
         pkgs.graphviz
         pkgs.mc
+        pkgs.visidata
 
         # Fonts
         pkgs.nerdfonts
