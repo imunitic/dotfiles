@@ -37,28 +37,20 @@
         # Development
         pkgs.rlwrap
         pkgs.rustup
-        pkgs.rust-analyzer
-        pkgs.nim
         pkgs.universal-ctags
         pkgs.direnv
         pkgs.gdb
         pkgs.go
         pkgs.gopls
-        pkgs.go-protobuf
-        pkgs.grpcurl
-        pkgs.prototool
-        pkgs.protobuf
         pkgs.python3
         pkgs.pipenv
-        pkgs.prototool
         pkgs.nodejs
         pkgs.yarn
-        pkgs.niv
-        pkgs.manix
         pkgs.libiconv
         pkgs.cmake
         pkgs.elmPackages.elm
         pkgs.redis
+        pkgs.roswell
  
         # Utils
         pkgs.fzf
