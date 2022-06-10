@@ -50,7 +50,6 @@
         pkgs.cmake
         pkgs.elmPackages.elm
         pkgs.redis
-        pkgs.roswell
  
         # Utils
         pkgs.fzf
@@ -72,6 +71,7 @@
         pkgs.terraform
         pkgs.kubeval
         pkgs.git-filter-repo
+        pkgs.graphviz
 
         # Programs
         pkgs.tmux
