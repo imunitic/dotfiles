@@ -39,7 +39,7 @@ bindkey "ç" fzf-cd-widget
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export EDITOR=nvim
+export EDITOR=emacs
 export PATH=$PATH:~/.local/bin:~/.cargo/bin:~/.ghcup/bin
 export NIXPKGS_ALLOW_UNFREE=1
 export NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1
