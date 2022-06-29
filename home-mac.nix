@@ -83,7 +83,7 @@
         pkgs.graphviz
         pkgs.mc
         pkgs.visidata
-
+	pkgs.gobang
         # Fonts
         pkgs.nerdfonts
 
