@@ -31,6 +31,7 @@ alias h="home-manager"
 alias gst="nvim -c 'G | wincmd j | hide'"
 alias lzg="lazygit"
 alias nixu="nix-channel --update; nix-env -iA nixpkgs.nix"
+alias e="/Applications/Emacs.app/Contents/MacOS/Emacs"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
