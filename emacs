@@ -45,3 +45,6 @@
 (when (equal system-type 'darwin)
  (setq mac-command-modifier 'meta)
  (setq mac-option-modifier 'super))
+
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
