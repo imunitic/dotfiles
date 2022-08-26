@@ -39,8 +39,12 @@
 (global-set-key (kbd "M-L") (lambda () (interactive) (enlarge-window  1 t)))
 
 (setq lsp-keymap-prefix "C-c l")
+
 (require 'lsp-mode)
 (add-hook 'go-mode-hook #'lsp)
+
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 (when (equal system-type 'darwin)
  (setq mac-command-modifier 'meta)
