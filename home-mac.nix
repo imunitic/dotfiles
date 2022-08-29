@@ -28,7 +28,7 @@
 
   home.file.".zshrc".source = "${config.home.homeDirectory}/Development/personal/dotfiles/zshrc";
   home.file.".vimrc".source = "${config.home.homeDirectory}/Development/personal/dotfiles/vimrc";
-  home.file.".emacs".source = "${config.home.homeDirectory}/Development/personal/dotfiles/emacs";
+  # home.file.".emacs".source = "${config.home.homeDirectory}/Development/personal/dotfiles/emacs";
   home.file.".config/nvim/init.vim".source = "${config.home.homeDirectory}/Development/personal/dotfiles/vimrc";
   home.file.".config/alacritty/alacritty.yml".source = "${config.home.homeDirectory}/Development/personal/dotfiles/alacritty.yml";
   home.file.".config/kitty/kitty.conf".source = "${config.home.homeDirectory}/Development/personal/dotfiles/kitty.conf";
@@ -51,6 +51,7 @@
         pkgs.cmake
         pkgs.elmPackages.elm
         pkgs.redis
+	pkgs.roswell
  
         # Utils
         pkgs.fzf
