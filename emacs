@@ -23,6 +23,7 @@
 (setq backup-by-copying t)
 (setq create-lockfiles nil)
 (setq auto-save-default nil)
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
 
 (global-company-mode)
 (global-display-line-numbers-mode)
