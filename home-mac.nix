@@ -37,7 +37,6 @@
   home.packages = [
         # Development
         pkgs.rlwrap
-        pkgs.rustup
         pkgs.universal-ctags
         pkgs.direnv
         pkgs.gdb
@@ -48,10 +47,8 @@
         pkgs.nodejs
         pkgs.yarn
         pkgs.libiconv
-        pkgs.cmake
         pkgs.elmPackages.elm
         pkgs.redis
-	pkgs.roswell
  
         # Utils
         pkgs.fzf
@@ -62,7 +59,7 @@
         pkgs.bat
         pkgs.lf
         pkgs.k9s
-        pkgs.git
+	pkgs.git
         pkgs.google-cloud-sdk
         pkgs.zinit
         pkgs.watch
@@ -71,7 +68,6 @@
         pkgs.dive
         pkgs.glab
         pkgs.terraform
-        pkgs.kubeval
         pkgs.git-filter-repo
         pkgs.graphviz
 
@@ -83,8 +79,6 @@
         pkgs.htop
         pkgs.graphviz
         pkgs.mc
-        pkgs.visidata
-	pkgs.gobang
         # Fonts
         pkgs.nerdfonts
 

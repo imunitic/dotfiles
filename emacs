@@ -29,6 +29,7 @@
 (global-display-line-numbers-mode)
 (column-number-mode 1)
 (load-theme 'tango-dark t)
+(tool-bar-mode -1)
 
 (global-set-key (kbd "M-h") 'windmove-left)
 (global-set-key (kbd "M-j") 'windmove-down)
