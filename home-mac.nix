@@ -49,6 +49,7 @@
         pkgs.libiconv
         pkgs.elmPackages.elm
         pkgs.redis
+	pkgs.babashka
  
         # Utils
         pkgs.fzf
