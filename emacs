@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files '("~/Development/documents/org/daily-plan.org"))
  '(package-selected-packages
-   '(alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
+   '(projectile alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -71,3 +71,7 @@
 (ffap-bindings)
 
 (set-frame-font "Hurmit Nerd Font Mono 14" nil t)
+
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
