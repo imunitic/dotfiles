@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files '("~/Development/documents/org/daily-plan.org"))
  '(package-selected-packages
-   '(projectile alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
+   '(cider clojure-mode projectile alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -46,6 +46,9 @@
 
 (require 'lsp-mode)
 (add-hook 'go-mode-hook #'lsp)
+(add-hook 'clojure-mode-hook #'lsp)
+(add-hook 'clojurescript-mode-hook #'lsp)
+(add-hook 'clojurec-mode-hook #'lsp)
 
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
