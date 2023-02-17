@@ -61,7 +61,6 @@
         pkgs.lf
         pkgs.k9s
 	pkgs.git
-        pkgs.google-cloud-sdk
         pkgs.zinit
         pkgs.watch
         pkgs.nix-tree

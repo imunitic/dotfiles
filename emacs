@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files '("~/Development/documents/org/daily-plan.org"))
  '(package-selected-packages
-   '(cider clojure-mode projectile alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
+   '(neotree ace-window cider clojure-mode projectile alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -28,6 +28,7 @@
 
 (global-company-mode)
 (global-display-line-numbers-mode)
+(global-tab-line-mode)
 (column-number-mode 1)
 (load-theme 'tango-dark t)
 (tool-bar-mode -1)
@@ -36,11 +37,14 @@
 (global-set-key (kbd "M-j") 'windmove-down)
 (global-set-key (kbd "M-k") 'windmove-up)
 (global-set-key (kbd "M-l") 'windmove-right)
+(global-set-key (kbd "M-o") 'ace-window)
+(global-set-key (kbd "<f8>") 'neotree-toggle)
 
 (global-set-key (kbd "M-H") (lambda () (interactive) (enlarge-window -1 t)))
 (global-set-key (kbd "M-J") (lambda () (interactive) (enlarge-window  1)))
 (global-set-key (kbd "M-K") (lambda () (interactive) (enlarge-window -1)))
 (global-set-key (kbd "M-L") (lambda () (interactive) (enlarge-window  1 t)))
+
 
 (setq lsp-keymap-prefix "C-c l")
 
