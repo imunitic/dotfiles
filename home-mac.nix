@@ -59,7 +59,6 @@
         pkgs.ripgrep
         pkgs.bat
         pkgs.lf
-        pkgs.k9s
 	pkgs.git
         pkgs.zinit
         pkgs.watch

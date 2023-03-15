@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files '("~/Development/documents/org/daily-plan.org"))
  '(package-selected-packages
-   '(neotree ace-window cider clojure-mode projectile alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
+   '(docker dockerfile-mode importmagic dotenv-mode neotree ace-window cider clojure-mode projectile alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -67,9 +67,24 @@
  (setq mac-command-modifier 'meta)
  (setq mac-option-modifier 'super))
 
-(when (memq window-system '(mac ns x))
+(use-package exec-path-from-shell
+  :if (memq window-system '(mac ns x))
+  :ensure t
+  :config
   (exec-path-from-shell-initialize))
 
+(use-package all-the-icons
+  :if (display-graphic-p))
+
+(use-package neotree
+  :ensure t
+  :config
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  (setq neo-window-fixed-size nil))
+
+(use-package docker
+  :ensure t
+  :bind ("C-c d" . docker))
 
 (global-set-key (kbd "C-c l") #'org-store-link)
 (global-set-key (kbd "C-c a") #'org-agenda)
