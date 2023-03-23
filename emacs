@@ -3,9 +3,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(elpy-formatter 'black)
+ '(elpy-test-runner 'elpy-test-pytest-runner)
  '(org-agenda-files '("~/Development/documents/org/daily-plan.org"))
  '(package-selected-packages
-   '(docker transient docker-compose-mode dockerfile-mode importmagic dotenv-mode neotree ace-window cider clojure-mode projectile alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
+   '(realgud docker transient docker-compose-mode dockerfile-mode importmagic dotenv-mode neotree ace-window cider clojure-mode projectile alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -39,6 +41,7 @@
 (global-set-key (kbd "M-l") 'windmove-right)
 (global-set-key (kbd "M-o") 'ace-window)
 (global-set-key (kbd "<f8>") 'neotree-toggle)
+(global-set-key (kbd "s-l") 'goto-line)
 
 (global-set-key (kbd "M-H") (lambda () (interactive) (enlarge-window -1 t)))
 (global-set-key (kbd "M-J") (lambda () (interactive) (enlarge-window  1)))
@@ -61,7 +64,11 @@
   :ensure t
   :defer t
   :init
-  (advice-add 'python-mode :before 'elpy-enable))
+  (advice-add 'python-mode :before 'elpy-enable)
+  :bind (("C-c @ C-b" . elpy-folding-toggle-docstring)
+         ("C-c @ C-m" . elpy-folding-toggle-comments)))
+
+(add-hook 'python-mode-hook 'hs-minor-mode)
 
 (when (equal system-type 'darwin)
  (setq mac-command-modifier 'meta)
@@ -96,6 +103,15 @@
 
 (set-frame-font "Hurmit Nerd Font Mono 14" nil t)
 
-(projectile-mode +1)
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+	      ("s-p" . projectile-command-map)
+	      ("C-c p" . projectile-command-map)))
+
+(use-package importmagic
+    :ensure t
+    :config
+    (add-hook 'python-mode-hook 'importmagic-mode))
