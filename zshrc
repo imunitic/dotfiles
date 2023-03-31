@@ -48,7 +48,7 @@ export NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1
 export LIBRARY_PATH=$LIBRARY_PATH:~/.nix-profile/lib # add nix libraries to the path for clang
 export LDFLAGS='-L/usr/local/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib'
 export CPPFLAGS='-I/usr/local/opt/openssl/include'
-export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
+export FZF_DEFAULT_COMMAND="rg -uu --files --hidden --follow --glob '!.git'"
 export FZF_DEFAULT_OPTS="--extended --cycle -e"
 
 eval "$(starship init zsh)"

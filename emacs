@@ -1,3 +1,5 @@
+;; -*- mode: elisp -*-
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -7,7 +9,7 @@
  '(elpy-test-runner 'elpy-test-pytest-runner)
  '(org-agenda-files '("~/Development/documents/org/daily-plan.org"))
  '(package-selected-packages
-   '(realgud docker transient docker-compose-mode dockerfile-mode importmagic dotenv-mode neotree ace-window cider clojure-mode projectile alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
+   '(fzf pyenv-mode realgud docker transient docker-compose-mode dockerfile-mode importmagic dotenv-mode neotree ace-window cider clojure-mode projectile alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -48,6 +50,8 @@
 (global-set-key (kbd "M-K") (lambda () (interactive) (enlarge-window -1)))
 (global-set-key (kbd "M-L") (lambda () (interactive) (enlarge-window  1 t)))
 
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
 
 (setq lsp-keymap-prefix "C-c l")
 
@@ -69,6 +73,7 @@
          ("C-c @ C-m" . elpy-folding-toggle-comments)))
 
 (add-hook 'python-mode-hook 'hs-minor-mode)
+(add-hook 'emacs-lisp-mode 'hs-minor-mode)
 
 (when (equal system-type 'darwin)
  (setq mac-command-modifier 'meta)
@@ -77,6 +82,9 @@
 (use-package exec-path-from-shell
   :if (memq window-system '(mac ns x))
   :ensure t
+  :init
+  (setq exec-path-from-shell-variables
+	'("PATH" "MANPATH" "FZF_DEFAULT_COMMAND" "FZF_DEFAULT_OPTS"))
   :config
   (exec-path-from-shell-initialize))
 
@@ -107,6 +115,8 @@
   :ensure t
   :init
   (projectile-mode +1)
+  :config
+  (setq projectile-switch-project-action 'neotree-projectile-action)
   :bind (:map projectile-mode-map
 	      ("s-p" . projectile-command-map)
 	      ("C-c p" . projectile-command-map)))
@@ -115,3 +125,36 @@
     :ensure t
     :config
     (add-hook 'python-mode-hook 'importmagic-mode))
+
+(use-package avy
+  :ensure t
+  :bind (("C-:" . avy-goto-char)
+	 ("C-'" . avy-goto-char-2)
+	 ("M-g f" . avy-goto-line)
+	 ("M-g w" . avy-goto-word-1)
+	 ("M-g e" . avy-goto-word-0)))
+
+(use-package magit
+    :bind (:map magit-file-section-map
+           ("RET" . magit-diff-visit-file-other-window)
+           :map magit-hunk-section-map
+           ("RET" . magit-diff-visit-file-other-window))
+    )
+  
+(use-package fzf
+  :bind (("C-s-f e" . fzf)
+	 ("C-s-f b" . fzf-switch-buffer)
+	 ("C-s-f f" . fzf-find-file)
+	 ("C-s-f p" . fzf-projectile)
+	 ("C-s-f d" . fzf-directory))
+  :config
+  (setq fzf/args "-x --color bw --print-query --margin=1,0 --no-hscroll"
+        fzf/executable "fzf"
+        fzf/git-grep-args "-i --line-number %s"
+        ;; command used for `fzf-grep-*` functions
+        ;; example usage for ripgrep:
+        fzf/grep-command "rg --no-heading -nH"
+        ;; fzf/grep-command "grep -nrH"
+        ;; If nil, the fzf buffer will appear at the top of the window
+        fzf/position-bottom t
+        fzf/window-height 15))
