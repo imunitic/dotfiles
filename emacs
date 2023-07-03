@@ -9,7 +9,7 @@
  '(elpy-test-runner 'elpy-test-pytest-runner)
  '(org-agenda-files '("~/Development/documents/org/daily-plan.org"))
  '(package-selected-packages
-   '(fzf pyenv-mode realgud docker transient docker-compose-mode dockerfile-mode importmagic dotenv-mode neotree ace-window cider clojure-mode projectile alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
+   '(jedi vterm importmagic annotate lsp-grammarly persp-projectile treemacs-magit treemacs-projectile treemacs perspective ag rg fzf pyenv-mode realgud docker transient docker-compose-mode dockerfile-mode dotenv-mode ace-window cider clojure-mode projectile alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -29,6 +29,7 @@
 (setq create-lockfiles nil)
 (setq auto-save-default nil)
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
+;(setq inferior-lisp-program "ros -Q run")
 
 (global-company-mode)
 (global-display-line-numbers-mode)
@@ -42,7 +43,7 @@
 (global-set-key (kbd "M-k") 'windmove-up)
 (global-set-key (kbd "M-l") 'windmove-right)
 (global-set-key (kbd "M-o") 'ace-window)
-(global-set-key (kbd "<f8>") 'neotree-toggle)
+(global-set-key (kbd "<f8>") 'treemacs)
 (global-set-key (kbd "s-l") 'goto-line)
 
 (global-set-key (kbd "M-H") (lambda () (interactive) (enlarge-window -1 t)))
@@ -53,6 +54,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 
+(setq smerge-command-prefix "\C-cv")
 (setq lsp-keymap-prefix "C-c l")
 
 (require 'lsp-mode)
@@ -70,7 +72,8 @@
   :init
   (advice-add 'python-mode :before 'elpy-enable)
   :bind (("C-c @ C-b" . elpy-folding-toggle-docstring)
-         ("C-c @ C-m" . elpy-folding-toggle-comments)))
+         ("C-c @ C-m" . elpy-folding-toggle-comments)
+	 ("C-c C-r c" . elpy-format-code)))
 
 (add-hook 'python-mode-hook 'hs-minor-mode)
 (add-hook 'emacs-lisp-mode 'hs-minor-mode)
@@ -91,12 +94,6 @@
 (use-package all-the-icons
   :if (display-graphic-p))
 
-(use-package neotree
-  :ensure t
-  :config
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-  (setq neo-window-fixed-size nil))
-
 (use-package docker
   :ensure t
   :bind ("C-c d" . docker))
@@ -115,16 +112,10 @@
   :ensure t
   :init
   (projectile-mode +1)
-  :config
-  (setq projectile-switch-project-action 'neotree-projectile-action)
   :bind (:map projectile-mode-map
 	      ("s-p" . projectile-command-map)
-	      ("C-c p" . projectile-command-map)))
-
-(use-package importmagic
-    :ensure t
-    :config
-    (add-hook 'python-mode-hook 'importmagic-mode))
+	      ("C-c p" . projectile-command-map)
+	      ("s-s" . projectile-persp-switch-project)))
 
 (use-package avy
   :ensure t
@@ -146,7 +137,9 @@
 	 ("C-s-f b" . fzf-switch-buffer)
 	 ("C-s-f f" . fzf-find-file)
 	 ("C-s-f p" . fzf-projectile)
-	 ("C-s-f d" . fzf-directory))
+	 ("C-s-f g" . fzf-grep)
+	 ("C-s-f d" . fzf-directory)
+	 ("C-s-f s" . fzf-git))
   :config
   (setq fzf/args "-x --color bw --print-query --margin=1,0 --no-hscroll"
         fzf/executable "fzf"
@@ -158,3 +151,35 @@
         ;; If nil, the fzf buffer will appear at the top of the window
         fzf/position-bottom t
         fzf/window-height 15))
+
+(use-package perspective
+  :bind
+  ("C-x C-b" . persp-list-buffers)
+  :custom
+  (persp-mode-prefix-key (kbd "C-s-p"))
+  :init
+  (persp-mode))
+
+(use-package importmagic
+    :ensure t
+    :config
+    (add-hook 'python-mode-hook 'importmagic-mode))
+
+
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+(defun load-dotenv (filename)
+  "Load environment variables from FILENAME."
+  (interactive "fLoad .env file: ")
+  (with-temp-buffer
+    (insert-file-contents filename)
+    (while (re-search-forward "^\\([^#= \t\n]+\\)=\\([^#\n]*\\)" nil t)
+      (setenv (match-string 1) (match-string 2))))
+  (message "Loaded environment variables from %s" filename))
+
+(global-set-key (kbd "C-s-a e") 'load-dotenv)
+(put 'dired-find-alternate-file 'disabled nil)
+
+(add-hook 'vterm-mode-hook (lambda () (display-line-numbers-mode 0)))
+
