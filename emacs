@@ -9,7 +9,7 @@
  '(elpy-test-runner 'elpy-test-pytest-runner)
  '(org-agenda-files '("~/Development/documents/org/daily-plan.org"))
  '(package-selected-packages
-   '(jedi vterm importmagic annotate lsp-grammarly persp-projectile treemacs-magit treemacs-projectile treemacs perspective ag rg fzf pyenv-mode realgud docker transient docker-compose-mode dockerfile-mode dotenv-mode ace-window cider clojure-mode projectile alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
+   '(flycheck-ocaml merlin merlin-company utop tuareg jedi vterm importmagic annotate lsp-grammarly persp-projectile treemacs-magit treemacs-projectile treemacs perspective ag rg fzf pyenv-mode realgud docker transient docker-compose-mode dockerfile-mode dotenv-mode ace-window cider clojure-mode projectile alert persist request use-package elpy rainbow-delimiters lsp-mode go-mode magit yaml-mode company sly)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
