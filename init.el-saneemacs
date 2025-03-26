@@ -1,0 +1,64 @@
+(load "~/.emacs.d/sanemacs.el" nil t)
+
+(set-frame-font "Hurmit Nerd Font Mono 16" nil t)
+
+;; Window navigation & management
+(global-set-key (kbd "M-h") 'windmove-left)
+(global-set-key (kbd "M-j") 'windmove-down)
+(global-set-key (kbd "M-k") 'windmove-up)
+(global-set-key (kbd "M-l") 'windmove-right)
+
+(global-set-key (kbd "M-H") (lambda () (interactive) (enlarge-window -1 t)))
+(global-set-key (kbd "M-J") (lambda () (interactive) (enlarge-window  1)))
+(global-set-key (kbd "M-K") (lambda () (interactive) (enlarge-window -1)))
+(global-set-key (kbd "M-L") (lambda () (interactive) (enlarge-window  1 t)))
+
+(use-package exec-path-from-shell
+  :if (memq window-system '(mac ns x))
+  :ensure t
+  :init
+  (setq exec-path-from-shell-variables
+	'("PATH" "MANPATH" "FZF_DEFAULT_COMMAND" "FZF_DEFAULT_OPTS"))
+  :config
+  (exec-path-from-shell-initialize))
+
+(use-package all-the-icons
+  :if (display-graphic-p))
+
+(use-package fzf
+  :bind (("C-s-f e" . fzf)
+	 ("C-s-f b" . fzf-switch-buffer)
+	 ("C-s-f f" . fzf-find-file)
+	 ("C-s-f p" . fzf-projectile)
+	 ("C-s-f g" . fzf-grep)
+	 ("C-s-f d" . fzf-directory)
+	 ("C-s-f s" . fzf-git))
+  :config
+  (setq fzf/args "-x --color bw --print-query --margin=1,0 --no-hscroll"
+        fzf/executable "fzf"
+        fzf/git-grep-args "-i --line-number %s"
+        ;; command used for `fzf-grep-*` functions
+        ;; example usage for ripgrep:
+        fzf/grep-command "rg --no-heading -nH"
+        ;; fzf/grep-command "grep -nrH"
+        ;; If nil, the fzf buffer will appear at the top of the window
+        fzf/position-bottom t
+        fzf/window-height 15))
+
+(use-package magit
+    :bind (:map magit-file-section-map
+           ("RET" . magit-diff-visit-file-other-window)
+           :map magit-hunk-section-map
+           ("RET" . magit-diff-visit-file-other-window)))
+
+;; VTerm
+(use-package vterm :ensure t)
+(add-hook 'vterm-mode-hook (lambda () (display-line-numbers-mode 0)))
+
+;; Powerline
+(use-package powerline :ensure t)
+(require 'powerline)
+(powerline-default-theme)
+
+;; Buffers
+(setq switch-to-buffer-obey-display-actions t)
