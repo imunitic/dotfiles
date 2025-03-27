@@ -62,3 +62,10 @@
 
 ;; Buffers
 (setq switch-to-buffer-obey-display-actions t)
+
+;; Org mode
+(global-set-key (kbd "C-c a") 'org-agenda)
+
+;; which-key-mode
+(require 'which-key)
+(which-key-mode)
