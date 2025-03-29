@@ -1,17 +1,13 @@
 (load "~/.emacs.d/sanemacs.el" nil t)
 
-(set-frame-font "Hurmit Nerd Font Mono 16" nil t)
-
-;; Window navigation & management
-(global-set-key (kbd "M-h") 'windmove-left)
-(global-set-key (kbd "M-j") 'windmove-down)
-(global-set-key (kbd "M-k") 'windmove-up)
-(global-set-key (kbd "M-l") 'windmove-right)
-
-(global-set-key (kbd "M-H") (lambda () (interactive) (enlarge-window -1 t)))
-(global-set-key (kbd "M-J") (lambda () (interactive) (enlarge-window  1)))
-(global-set-key (kbd "M-K") (lambda () (interactive) (enlarge-window -1)))
-(global-set-key (kbd "M-L") (lambda () (interactive) (enlarge-window  1 t)))
+;; Theme
+(use-package ample-theme
+  :init (progn (load-theme 'ample t t)
+               (load-theme 'ample-flat t t)
+               (load-theme 'ample-light t t)
+               (enable-theme 'ample-flat))
+  :defer t
+  :ensure t)
 
 (use-package exec-path-from-shell
   :if (memq window-system '(mac ns x))
@@ -51,24 +47,74 @@
            :map magit-hunk-section-map
            ("RET" . magit-diff-visit-file-other-window)))
 
+;; Lisp stuff
+(use-package slime
+  :ensure t
+  :config
+  (setq inferior-lisp-program "ros -Q run"))
+
+;; SLIME from Git
+;; (use-package slime
+;;   :ensure nil
+;;   :load-path "~/.emacs.d/slime/")  ; Adjust path to where you cloned SLIME
+;; (setq inferior-lisp-program "sbcl")  ; Set your Lisp implementation (e.g., SBCL)
+
+(use-package paredit
+  :ensure t
+  :hook
+  ((lisp-mode . paredit-mode)
+   (emacs-lisp-mode . paredit-mode)
+   (scheme-mode . paredit-mode)))
+
+(use-package rainbow-delimiters
+  :ensure t
+  :hook
+  ((prog-mode . rainbow-delimiters-mode)))
+
 ;; VTerm
-(use-package vterm :ensure t)
-(add-hook 'vterm-mode-hook (lambda () (display-line-numbers-mode 0)))
+(use-package vterm
+  :ensure t
+  :config
+  (add-hook 'vterm-mode-hook (lambda () (display-line-numbers-mode 0))))
+
 
 ;; Powerline
-(use-package powerline :ensure t)
-(require 'powerline)
-(powerline-default-theme)
+(use-package powerline
+  :ensure t
+  :config
+  (powerline-default-theme))
 
 ;; Buffers
 (setq switch-to-buffer-obey-display-actions t)
 
 ;; Org mode
-(global-set-key (kbd "C-c a") 'org-agenda)
+(use-package org
+  :ensure nil  ; org comes built-in with Emacs
+  :bind
+  ("C-c a" . org-agenda))
 
 ;; which-key-mode
-(require 'which-key)
-(which-key-mode)
+(use-package which-key
+  :ensure nil           ; Explicitly disable package installation
+  :config
+  (which-key-mode 1))   ; Enable which-key
+
+;; eshell
+(use-package eshell
+  :ensure nil
+  :config
+  (setq eshell-destroy-buffer-when-process-dies t)
+  (with-eval-after-load 'em-term
+    (add-hook 'eshell-mode-hook (lambda () (display-line-numbers-mode 0)))
+    (add-to-list 'eshell-visual-commands "lazygit")
+    (add-to-list 'eshell-visual-commands "lf")
+    (add-to-list 'eshell-visual-commands "nvim")))
+
+(use-package eshell-vterm
+  :ensure t
+  :after eshell
+  :config
+  (eshell-vterm-mode))
 
 ;; vertico
 (use-package vertico
@@ -76,6 +122,7 @@
   :init
   (vertico-mode))
 
+;; corfu
 (use-package corfu
   ;; Optional customizations
   ;; :custom
@@ -97,3 +144,19 @@
   :ensure t
   :init
   (global-corfu-mode))
+
+;; Other emacs configurations
+(use-package emacs
+  :init
+ ;; Window navigation & management
+  (global-set-key (kbd "M-h") 'windmove-left)
+  (global-set-key (kbd "M-j") 'windmove-down)
+  (global-set-key (kbd "M-k") 'windmove-up)
+  (global-set-key (kbd "M-l") 'windmove-right)
+
+  (global-set-key (kbd "M-H") (lambda () (interactive) (enlarge-window -1 t)))
+  (global-set-key (kbd "M-J") (lambda () (interactive) (enlarge-window  1)))
+  (global-set-key (kbd "M-K") (lambda () (interactive) (enlarge-window -1)))
+  (global-set-key (kbd "M-L") (lambda () (interactive) (enlarge-window  1 t)))
+  (set-frame-font "Hurmit Nerd Font Mono 16" nil t)
+  (add-hook 'prog-mode-hook #'completion-preview-mode))
