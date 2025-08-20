@@ -171,42 +171,6 @@ require("lazy").setup({
 	},
 
 	{
-		"smoka7/multicursors.nvim",
-		event = "VeryLazy",
-		dependencies = {
-			"smoka7/hydra.nvim",
-		},
-		opts = {},
-		cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
-		keys = {
-			{
-				mode = { "v", "n" },
-				"<Leader>m",
-				"<cmd>MCstart<cr>",
-				desc = "Create a selection for selected text or word under the cursor",
-			},
-		},
-	},
-
-	-- Here is a more advanced example where we pass configuration
-	-- options to `gitsigns.nvim`. This is equivalent to the following Lua:
-	--    require('gitsigns').setup({ ... })
-	--
-	-- See `:help gitsigns` to understand what the configuration keys do
-	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
-		"lewis6991/gitsigns.nvim",
-		opts = {
-			signs = {
-				add = { text = "+" },
-				change = { text = "~" },
-				delete = { text = "_" },
-				topdelete = { text = "‾" },
-				changedelete = { text = "~" },
-			},
-		},
-	},
-
-	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
 		dependencies = {
@@ -518,32 +482,6 @@ require("lazy").setup({
 				-- But for many setups, the LSP (`tsserver`) will work just fine
 				-- tsserver = {},
 				--
-				jdtls = {
-					init_options = {
-						settings = {
-							java = {
-								imports = {
-									gradle = {
-										enabled = true,
-										wrapper = {
-											enabled = true,
-											checksums = {
-												{
-													sha256 = "c8c703ffabdbd678ebdf3f09c00791e145170dda3762f8dbaf8cab93a8a5b5be",
-													allowed = true,
-												},
-												{
-													sha256 = "0d37569cf15f5ad065e2cb1683fb1e7ee09a045840517fc79978c4bf65952a8d",
-													allowed = true,
-												},
-											},
-										},
-									},
-								},
-							},
-						},
-					},
-				},
 				lua_ls = {
 					-- cmd = {...},
 					-- filetypes = { ...},
